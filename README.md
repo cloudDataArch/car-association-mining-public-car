@@ -12,16 +12,18 @@ Os arquivos foram obtidos no portal oficial Consulta Pública do CAR (https://co
 
 - data/public_car/: 18 CSVs municipais públicos usados na preparação;
 - pipeline_public_car_jupyter.py: script executável em Jupyter Notebook;
+- exec_pipeline_public_car.ipynb: notebook de execução do script;
+- exec_pipeline_public_car_executed.ipynb: notebook executado com os resultados desta versão;
 - manifesto_fontes.csv: identificação das camadas e dos arquivos;
 - results/: transações, itemsets, regras e resumos gerados pela execução;
 - mensagem_para_Carlos_Leite.txt: resumo para leitura técnica do especialista.
 
 ## Execução
 
-O script usa Python, pandas, numpy e mlxtend. No Jupyter:
+O script usa Python, pandas, numpy e mlxtend. O notebook executado usa a pasta data/public_car/ e grava novas saídas em results_runtime/. Para repetir no Jupyter:
 
     %pip install -r requirements.txt
 
-Depois, ajuste DATA_DIR para data/public_car/ e execute pipeline_public_car_jupyter.py. O fluxo transforma cada imóvel em uma transação e executa Apriori e Eclat com suporte mínimo de 1%, confiança mínima de 60% e tamanho máximo de itemset igual a três.
+Depois, abra exec_pipeline_public_car.ipynb e execute a célula. O fluxo transforma cada imóvel em uma transação e executa Apriori e Eclat com suporte mínimo de 1%, confiança mínima de 60% e tamanho máximo de itemset igual a três.
 
 As regras resultantes são padrões descritivos de coocorrência. Não constituem diagnóstico automático de irregularidade, fraude, propriedade, conflito fundiário ou não conformidade ambiental.

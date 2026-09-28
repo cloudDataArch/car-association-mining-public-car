@@ -11,11 +11,13 @@ O script não acessa Trino, Iceberg, GOLD, SNCR, SIGEF ou bases restritas.
 from pathlib import Path
 from itertools import combinations
 import math
+import unicodedata
 import numpy as np
 import pandas as pd
 
-DATA_DIR = Path(r"D:\USUARIO_CELIO\Downloads")
-OUTPUT_DIR = DATA_DIR / "saida_car"
+PROJECT_DIR = Path(__file__).resolve().parent
+DATA_DIR = PROJECT_DIR / "data" / "public_car"
+OUTPUT_DIR = PROJECT_DIR / "results_runtime"
 MIN_SUPPORT = 0.01
 MIN_CONFIDENCE = 0.60
 MAX_LEN = 3
@@ -50,7 +52,16 @@ def numeric_series(series: pd.Series) -> pd.Series:
 
 
 def find_file(prefix: str, suffix: str) -> Path:
-    candidates = sorted(DATA_DIR.glob(f"{prefix}_{suffix}.csv"))
+    def norm(value: str) -> str:
+        value = unicodedata.normalize("NFKD", value)
+        value = "".join(ch for ch in value if not unicodedata.combining(ch))
+        return "".join(ch.lower() for ch in value if ch.isalnum())
+
+    expected = norm(f"{prefix}_{suffix}")
+    candidates = sorted(
+        path for path in DATA_DIR.glob("*.csv")
+        if norm(path.stem) == expected
+    )
     if not candidates:
         raise FileNotFoundError(f"Arquivo não encontrado: {prefix}_{suffix}.csv")
     return candidates[0]
