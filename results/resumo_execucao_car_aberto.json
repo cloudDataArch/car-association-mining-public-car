@@ -1,0 +1,14 @@
+{
+  "total_transacoes": 11340,
+  "min_support": 0.01,
+  "min_count": 114,
+  "min_confidence": 0.6,
+  "max_len": 3,
+  "itemsets_frequentes": 11574,
+  "regras": 17997,
+  "apriori_eclat_coincidem": true,
+  "tempo_apriori_seg": 26.712410699983593,
+  "tempo_eclat_seg": 1.055841800000053,
+  "memoria_apriori_mb": 7.266811370849609,
+  "memoria_eclat_mb": 29.343149185180664
+}

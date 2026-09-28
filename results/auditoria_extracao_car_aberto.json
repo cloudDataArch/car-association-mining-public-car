@@ -1,0 +1,368 @@
+{
+  "arquivos": [
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_SAO_FELIX_DO_XINGU_RESERVA_LEGAL.csv",
+      "camada_detectada": "RESERVA_LEGAL",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 7891,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_APP.csv",
+      "camada_detectada": "APP",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 115879,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_AREA_CONSOLIDADA.csv",
+      "camada_detectada": "AREA_CONSOLIDADA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 10155,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_AREA_IMOVEL.csv",
+      "camada_detectada": "PERIMETRO_IMOVEL",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 9636,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "dat_criaca",
+        "dat_atuali",
+        "num_retific",
+        "mod_fiscal",
+        "nom_tema",
+        "ind_tipo",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_AREA_POUSIO.csv",
+      "camada_detectada": "POUSIO",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 173,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_HIDROGRAFIA.csv",
+      "camada_detectada": "HIDROGRAFIA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 5633,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_SERVIDAO_ADMINISTRATIVA.csv",
+      "camada_detectada": "SERVIDAO_ADMINISTRATIVA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 1894,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_USO_RESTRITO.csv",
+      "camada_detectada": "USO_RESTRITO",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 13,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\PA_São Félix do Xingu_VEGETACAO_NATIVA.csv",
+      "camada_detectada": "VEGETACAO_NATIVA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 8973,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_APP.csv",
+      "camada_detectada": "APP",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 4379,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_AREA_CONSOLIDADA.csv",
+      "camada_detectada": "AREA_CONSOLIDADA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 2116,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_AREA_IMOVEL.csv",
+      "camada_detectada": "PERIMETRO_IMOVEL",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 1704,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "dat_criaca",
+        "dat_atuali",
+        "num_retific",
+        "mod_fiscal",
+        "nom_tema",
+        "ind_tipo",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_AREA_POUSIO.csv",
+      "camada_detectada": "POUSIO",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 1,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_HIDROGRAFIA.csv",
+      "camada_detectada": "HIDROGRAFIA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 1731,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_SERVIDAO_ADMINISTRATIVA.csv",
+      "camada_detectada": "SERVIDAO_ADMINISTRATIVA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 399,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_USO_RESTRITO.csv",
+      "camada_detectada": "USO_RESTRITO",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 57,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_Presidente Prudente_VEGETACAO_NATIVA.csv",
+      "camada_detectada": "VEGETACAO_NATIVA",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 1964,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    },
+    {
+      "arquivo": "D:\\USUARIO_CELIO\\ARTIGO FINAL MINERAÇÃO DE DADOS\\DADOS_ABERTOS_CAR_2026-09-21_COMUNS\\SP_PRESIDENTE_PRUDENTE_RESERVA_LEGAL.csv",
+      "camada_detectada": "RESERVA_LEGAL",
+      "formato_leitura": "utf-8-sig/;",
+      "linhas": 1019,
+      "colunas": [
+        "cod_imovel",
+        "cod_estado",
+        "municipio",
+        "nom_tema",
+        "des_condic",
+        "ind_status",
+        "num_area"
+      ],
+      "coluna_id": "cod_imovel",
+      "coluna_uf": "cod_estado",
+      "coluna_municipio": "municipio",
+      "coluna_area": "num_area"
+    }
+  ],
+  "total_imoveis_dataset": 11340,
+  "camadas_detectadas": [
+    "APP",
+    "AREA_CONSOLIDADA",
+    "HIDROGRAFIA",
+    "PERIMETRO_IMOVEL",
+    "POUSIO",
+    "RESERVA_LEGAL",
+    "SERVIDAO_ADMINISTRATIVA",
+    "USO_RESTRITO",
+    "VEGETACAO_NATIVA"
+  ]
+}

@@ -1,0 +1,7 @@
+Carlos, estou desenvolvendo um estudo exploratório de mineração de regras de associação em dados públicos do Cadastro Ambiental Rural (CAR). O recorte compara São Félix do Xingu/PA e Presidente Prudente/SP, usando o imóvel identificado por cod_imovel como unidade de análise.
+
+Integrei a tabela pública de imóveis com as camadas de APP, área consolidada, área de pousio, hidrografia, reserva legal, servidão administrativa, uso restrito e vegetação nativa. Os imóveis foram transformados em transações categóricas e analisados com Apriori e Eclat. O objetivo é identificar padrões de coocorrência e comparar a cobertura cadastral entre os dois municípios.
+
+Os resultados são apenas indícios analíticos. Não representam diagnóstico de irregularidade, fraude, propriedade, conflito fundiário ou não conformidade ambiental. Gostaria da sua avaliação técnica sobre a adequação das variáveis, a interpretação dos padrões e os cuidados necessários diante da natureza declaratória do CAR.
+
+Estou enviando também o manifesto das fontes públicas e um script para execução no Jupyter Notebook. O script não acessa bases internas; utiliza somente os CSVs públicos baixados do portal do CAR.

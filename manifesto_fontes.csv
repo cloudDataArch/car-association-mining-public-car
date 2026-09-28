@@ -1,0 +1,19 @@
+municipio;uf;camada;arquivo_publico;finalidade
+São Félix do Xingu;PA;Área do imóvel;PA_São Félix do Xingu_AREA_IMOVEL.csv;unidade principal e atributos cadastrais públicos
+São Félix do Xingu;PA;APP;PA_São Félix do Xingu_APP.csv;presença e área da camada APP
+São Félix do Xingu;PA;Área consolidada;PA_São Félix do Xingu_AREA_CONSOLIDADA.csv;presença e área da camada
+São Félix do Xingu;PA;Área de pousio;PA_São Félix do Xingu_AREA_POUSIO.csv;presença e área da camada
+São Félix do Xingu;PA;Hidrografia;PA_São Félix do Xingu_HIDROGRAFIA.csv;presença e área da camada
+São Félix do Xingu;PA;Reserva legal;PA_São Félix do Xingu_RESERVA_LEGAL.csv;presença e área da camada
+São Félix do Xingu;PA;Servidão administrativa;PA_São Félix do Xingu_SERVIDAO_ADMINISTRATIVA.csv;presença e área da camada
+São Félix do Xingu;PA;Uso restrito;PA_São Félix do Xingu_USO_RESTRITO.csv;presença e área da camada
+São Félix do Xingu;PA;Vegetação nativa;PA_São Félix do Xingu_VEGETACAO_NATIVA.csv;presença e área da camada
+Presidente Prudente;SP;Área do imóvel;SP_Presidente Prudente_AREA_IMOVEL.csv;unidade principal e atributos cadastrais públicos
+Presidente Prudente;SP;APP;SP_Presidente Prudente_APP.csv;presença e área da camada APP
+Presidente Prudente;SP;Área consolidada;SP_Presidente Prudente_AREA_CONSOLIDADA.csv;presença e área da camada
+Presidente Prudente;SP;Área de pousio;SP_Presidente Prudente_AREA_POUSIO.csv;presença e área da camada
+Presidente Prudente;SP;Hidrografia;SP_Presidente Prudente_HIDROGRAFIA.csv;presença e área da camada
+Presidente Prudente;SP;Reserva legal;SP_Presidente Prudente_RESERVA_LEGAL.csv;presença e área da camada
+Presidente Prudente;SP;Servidão administrativa;SP_Presidente Prudente_SERVIDAO_ADMINISTRATIVA.csv;presença e área da camada
+Presidente Prudente;SP;Uso restrito;SP_Presidente Prudente_USO_RESTRITO.csv;presença e área da camada
+Presidente Prudente;SP;Vegetação nativa;SP_Presidente Prudente_VEGETACAO_NATIVA.csv;presença e área da camada

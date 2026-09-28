@@ -1,0 +1,24 @@
+{
+  "regras_brutas": 17997,
+  "regras_apos_filtros": 3010,
+  "regras_candidatas_artigo": 12,
+  "regras_estaveis_nos_dois_municipios": 758,
+  "classes_especificas": {
+    "ESPECIFICA_PRESIDENTE_PRUDENTE": 291,
+    "ESPECIFICA_SAO_FELIX_DO_XINGU": 1535,
+    "ESTAVEL_NOS_DOIS_MUNICIPIOS": 758,
+    "NAO_CLASSIFICADA": 426
+  },
+  "descartes": {
+    "mesma_fonte_presenca_area": 1218,
+    "limiar_estatistico": 8802,
+    "variavel_derivada_qtd_temas": 2945,
+    "equivalencia_municipio_uf": 286
+  },
+  "limiares": {
+    "suporte_minimo": 0.01,
+    "confianca_minima": 0.6,
+    "lift_minimo": 1.2,
+    "cobertura_minima": 0.02
+  }
+}
