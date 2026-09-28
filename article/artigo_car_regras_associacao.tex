@@ -1,0 +1,192 @@
+\pdfoutput=1
+\documentclass[11pt]{article}
+\usepackage{EACL2023}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage{latexsym}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{url}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\title{Exploratory Association Rule Mining in Open Rural Registration Data: A Comparison of Two Brazilian Municipalities}
+
+\author{Célio Júnio de Souza \\\\
+  Programa de Pós-Graduação em Computação Aplicada \\\\
+  Universidade de Brasília}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This paper presents an exploratory analysis of association rules in open data from the Brazilian Rural Environmental Registry (Cadastro Ambiental Rural, CAR). The study compares rural properties located in São Félix do Xingu, Pará, and Presidente Prudente, São Paulo, two municipalities with different territorial profiles. The public CAR files were downloaded from the official Consulta Pública portal on 21 September 2026 and integrated by the property identifier \texttt{cod\_imovel}. The analytical unit is the CAR rural property. The transaction representation combines area bands, fiscal-module bands, registry status, property type, and the presence or absence of thematic layers such as consolidated area, permanent preservation areas, hydrology, legal reserve, restricted use, administrative easements, fallow areas, and native vegetation remnants. Apriori and Eclat were executed with minimum support of 1\%, minimum confidence of 60\%, and maximum itemset length of three. Both algorithms produced the same frequent itemsets. The results are interpreted as descriptive analytical indications rather than evidence of illegality, fraud, ownership, or environmental non-compliance.
+\end{abstract}
+
+\noindent\textbf{Keywords:} association rules; Apriori; Eclat; Cadastro Ambiental Rural; open data; rural properties.
+
+\section{Introduction}
+
+Rural registration data combine administrative, environmental, spatial, and temporal attributes. In Brazil, the Cadastro Ambiental Rural (CAR) provides a public electronic registry intended to organize environmental information on rural properties and possessions. The public data are useful for exploratory analysis, but they are declaratory and must not be treated as automatic proof of property rights, environmental compliance, or irregularity.
+
+This paper investigates whether association rule mining can reveal interpretable co-occurrence patterns in open CAR data. The empirical comparison uses São Félix do Xingu, in the state of Pará, and Presidente Prudente, in the state of São Paulo. The two municipalities were selected to produce a contrast between different territorial and cadastral contexts while preserving a common analytical unit and a common public data source.
+
+The research question is: \emph{Which association patterns can be identified in open CAR data for rural properties in São Félix do Xingu and Presidente Prudente, and how do these patterns differ between the two municipalities?}
+
+The contribution is methodological and exploratory. First, the paper documents a reproducible workflow for downloading, checking, integrating, and transforming municipal CAR files into transactions. Second, it compares Apriori and Eclat on the same transaction set. Third, it reports municipal support, confidence, lift, and antecedent coverage so that global rules are not interpreted without considering the different sizes of the municipal samples.
+
+\section{Background}
+
+\subsection{Open CAR data}
+
+The official Consulta Pública portal provides downloadable CAR layers in tabular and geospatial formats. This study used the public CSV files for the selected municipalities. The main property table contains the CAR identifier, state, municipality, declared area, fiscal modules, property type, registry status, and other attributes. The thematic files describe occurrences associated with the same property identifier, including consolidated area, permanent preservation areas, hydrology, legal reserve, restricted use, administrative easements, fallow areas, and native vegetation remnants.
+
+The layers have different institutional meanings. The presence of a record in a thematic layer means that the public file contains a corresponding feature or declaration. The absence of a record is not interpreted as proof that the phenomenon does not exist in the property. This distinction is central to the interpretation of all rules in this paper.
+
+\subsection{Association rule mining}
+
+Association rule mining searches for frequent itemsets and implication-like co-occurrence patterns in transaction data. Agrawal and Srikant formalized the task using rules of the form $X \Rightarrow Y$, support, and confidence, and proposed the Apriori family of algorithms for frequent itemset generation \citep{agrawal1994}. Zaki proposed scalable vertical approaches for association mining, including the Eclat family, which represents items through transaction identifier sets and intersects these sets during the search \citep{zaki2000}.
+
+For a rule $X \Rightarrow Y$, support is the proportion of transactions containing $X \cup Y$. Confidence is the proportion of transactions containing $X$ that also contain $Y$. Lift compares the observed confidence with the marginal frequency of $Y$. Lift greater than one indicates positive co-occurrence relative to the marginal frequency, but it does not establish causation.
+
+\subsection{Computational support and interpretive safeguards}
+
+Association-rule analysis is supported by mature computational environments. The \textit{arules} package provides data structures and implementations for frequent-itemset and rule mining, including Apriori and Eclat interfaces \citep{hahsler2005}. The companion \textit{arulesViz} package emphasizes exploratory visualization of large rule sets and supports graph-based, matrix, and scatter-plot views \citep{hahsler2017}. These contributions motivate the use of algorithmic agreement, complementary interest measures, and an interpretive audit rather than ranking rules by a single metric.
+
+For the CAR, the institutional meaning of a declaration must also be preserved. Research on the Pará CAR has documented incongruences and overlaps and cautioned against treating the environmental registry as a substitute for land-tenure regularization \citep{tupiassu2017}. Accordingly, this paper treats discovered associations as patterns in public registry records and not as legal conclusions.
+
+\subsection{Related work at the University of Bras\'ilia}
+
+Several studies developed at the University of Bras\'ilia provide a relevant local basis for this research, although none of them is assumed to have the same objective or method as the present paper. Santos (2022), supervised by Osmar Ab\'ilio de Carvalho J\'unior, combined SIGEF and SNCR data with geoprocessing, data science, network analysis, clustering, and mathematical modeling to study the georeferencing of rural properties \citep{santos2022}. Couto (2017), supervised by Ricardo Seixas Brites, proposed the structuring and modeling of a geospatial database for CAR information \citep{couto2017}. Silva (2023), supervised by Suzi Theodoro, discussed the institutional obstacles to CAR implementation and identified the integration of SICAR with environmental licensing systems and SIGEF as a relevant issue \citep{silva2023}.
+
+These studies justify the preparation choices adopted here: a property-level analytical unit, explicit treatment of spatial thematic layers, careful distinction between databases with different institutional purposes, and validation of identifiers before mining. They do not, however, establish rules to be validated by the present study, nor do they turn CAR records into legal evidence. Mendes (2020), Solari (2017), and Casteloni (2022) further support the use of CAR layers, spatial information, and environmental interpretation, respectively, while also reinforcing the need to preserve the declaratory and contextual character of the registry \citep{mendes2020,solari2017,casteloni2022}.
+
+\section{Materials and Methods}
+
+\subsection{CRISP-DM organization}
+
+The workflow follows the CRISP-DM reference model \citep{chapman2000}, but its role must be stated precisely. CRISP-DM is used here as an iterative process for understanding data, preparing transactions, modeling, evaluating, and documenting a data-mining study. It is not being used to validate legal rules, administrative regulations, cadastral norms, or business rules already defined by public institutions. The business-understanding stage therefore identifies the analytical objective and its decision context: to explore co-occurrence patterns in open CAR records. It does not define a normative target that the algorithms must prove or enforce.
+
+Data understanding consisted of checking the downloaded files, their fields, row counts, identifiers, municipalities, and states. Data preparation integrated thematic files through \texttt{cod\_imovel}. Modeling applied Apriori and Eclat. Evaluation compared frequent itemsets generated by both algorithms and inspected the interpretability, municipal stability, and possible construction-induced associations. Deployment, in this paper, is limited to producing reproducible tables and documented evidence for scientific discussion. Institutional rules and legislation are treated as semantic and interpretive constraints: they help explain what an attribute means and delimit what may be concluded, but they are not treated as labels that the mining algorithms validate.
+
+\subsection{Data source and study area}
+
+The data were downloaded from the official Consulta Pública do CAR portal \citep{carportal2026} on 21 September 2026. The final public dataset contains 9,636 properties from São Félix do Xingu and 1,704 properties from Presidente Prudente, totaling 11,340 properties. All records in the principal property files had a non-empty CAR identifier, and the number of distinct identifiers matched the number of records in each property file.
+
+The integrated layers were: property area, consolidated area, permanent preservation areas, hydrology, fallow area, legal reserve, administrative easement, restricted use, and native vegetation remnant. The public download for Legal Reserve in Presidente Prudente contained 1,019 layer records corresponding to 803 distinct properties. The public download for Legal Reserve in São Félix do Xingu contained 7,891 layer records corresponding to 5,599 distinct properties. Repeated identifiers within thematic layers were aggregated by property and area rather than treated as duplicated properties.
+
+\subsection{Transaction construction}
+
+Each property was represented by one transaction. The transaction included categorical items for state, municipality, property type, CAR status, area bands, and fiscal-module bands. For each thematic layer, the transaction included a presence item when at least one record with the property identifier was found. When an area attribute was available, the aggregated area was converted into the following bands: less than 4 ha; 4--15 ha; 15--100 ha; 100--1,000 ha; and 1,000 ha or more.
+
+The pipeline removed duplicated downloads, recognized abbreviated layer names, and restricted the analytical population to properties present in the principal property table. It did not create a new property from a thematic record that was absent from the property table.
+
+\subsection{Reproducibility and implementation}
+
+The workflow was implemented in Python in a Jupyter-compatible script. Tabular preparation used \texttt{pandas}; transaction construction used explicit property-level aggregation; and Apriori and Eclat were executed over the same transaction list using the Python association-mining implementation documented in the project materials. The execution environment, parameter values, public-file manifest, source code, and generated rule table are versioned with the study materials. The public inputs are the municipal CSV extracts downloaded from the official CAR portal on 21 September 2026. This makes it possible to rerun the study after checking file versions, encoding, column names, and the download date.
+
+\subsection{Interpretive boundary of the rules}
+
+The mined rules are statistical descriptions of co-occurrence in the transaction representation. A rule such as $X \Rightarrow Y$ does not mean that $X$ legally causes $Y$, that $Y$ is required by a regulation, or that a property with $X$ and $Y$ is regular or irregular. The distinction is especially important because CAR records are declaratory and because CAR, SIGEF, SNCR, and land-registration systems have different institutional purposes. The study therefore uses a two-level interpretation: algorithms generate candidate patterns, and an interpretive audit checks their provenance, construction, support, confidence, lift, coverage, municipal distribution, and compatibility with the documented meaning of the public layers. A specialist may contextualize a rule, but no specialist validation is presented as a legal certification.
+
+\subsection{Mining configuration}
+
+Apriori and Eclat were executed on the same transaction list with minimum support of 0.01, minimum confidence of 0.60, and maximum itemset length of three. Rules were retained for the interpretive audit when they had support of at least 0.01, confidence of at least 0.60, lift of at least 1.20, and antecedent coverage of at least 0.02. Rules linking a thematic layer's presence to its own area band were excluded from the principal candidate list because that relationship can be induced mechanically by the construction of the variables. Rules containing the derived summary item \texttt{QTD\_TEMAS\_AMBIENTAIS} were also excluded from the principal candidate list.
+
+Municipal metrics were calculated independently for São Félix do Xingu and Presidente Prudente. A rule was labeled stable when it met the thresholds in both municipalities. A rule was labeled municipality-specific when it met the thresholds in only one municipality.
+
+\section{Results}
+
+\subsection{Data coverage}
+
+Table~\ref{tab:coverage} summarizes the number of properties with at least one record in each thematic layer. These values describe coverage in the public files and are not estimates of the true existence of the phenomena on the ground.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Coverage of public CAR thematic layers by property.}
+\label{tab:coverage}
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrr}
+\toprule
+Layer & São Félix do Xingu & Presidente Prudente \\\\
+\midrule
+Property area & 9,636 & 1,704 \\\\
+APP & 5,274 & 1,210 \\\\
+Consolidated area & 9,043 & 1,440 \\\\
+Hydrology & 5,050 & 1,118 \\\\
+Fallow area & 63 & 1 \\\\
+Legal reserve & 5,599 & 803 \\\\
+Administrative easement & 942 & 303 \\\\
+Restricted use & 13 & 30 \\\\
+Native vegetation & 5,575 & 1,172 \\\\
+\bottomrule
+\end{tabular}
+}
+\end{table}
+
+The largest difference is the number of properties: São Félix do Xingu contributes 84.98\% of the combined population, while Presidente Prudente contributes 15.02\%. Consequently, global support is dominated by the Pará sample. This is why municipal metrics are reported separately.
+
+\subsection{Apriori and Eclat}
+
+The final common-layer execution generated 11,574 frequent itemsets and 17,997 raw rules. Apriori took approximately 34.93 seconds and Eclat approximately 1.02 seconds in the execution environment. The two algorithms generated the same set of frequent itemsets. This agreement is a consistency check for the implementation and input transaction set; it is not evidence that one algorithm is universally superior.
+
+After the interpretive audit, 3,010 rules remained. The audit retained 758 rules stable in both municipalities, 1,535 rules specific to São Félix do Xingu, and 291 rules specific to Presidente Prudente. Twelve diverse rules were selected as candidates for the article's main results table.
+
+\begin{table*}[t]
+\centering
+\scriptsize
+\caption{Representative candidate rules after the interpretive audit.}
+\label{tab:candidates}
+\begin{tabularx}{\textwidth}{p{0.16\textwidth}X X r r r r r}
+\toprule
+Class & Antecedent & Consequent & Support & Confidence & Coverage & PA lift & SP lift \\\\
+\midrule
+Stable & Consolidated area $<4$ ha + native vegetation = no & Property area $<4$ ha & 0.0429 & 0.8773 & 0.0489 & 15.87 & 3.49 \\\\
+Stable & APP = no + consolidated area $<4$ ha & Property area $<4$ ha & 0.0466 & 0.8126 & 0.0574 & 13.19 & 4.08 \\\\
+Stable & Consolidated area $<4$ ha + hydrology = no & Property area $<4$ ha & 0.0474 & 0.8006 & 0.0593 & 13.11 & 3.89 \\\\
+Stable & Property area $<4$ ha & Consolidated area $<4$ ha + administrative easement = no & 0.0588 & 0.7051 & 0.0834 & 12.53 & 2.61 \\\\
+PA-specific & Legal reserve $\geq1000$ ha & APP $100$--$1000$ ha + native vegetation $\geq1000$ ha & 0.0124 & 0.6130 & 0.0203 & 39.38 & -- \\\\
+PA-specific & Legal reserve $\geq1000$ ha & Native vegetation $\geq1000$ ha + hydrology = yes & 0.0152 & 0.7478 & 0.0203 & 38.54 & -- \\\\
+PA-specific & Legal reserve $\geq1000$ ha & Consolidated area = yes + native vegetation $\geq1000$ ha & 0.0145 & 0.7130 & 0.0203 & 38.17 & -- \\\\
+PA-specific & Legal reserve $\geq1000$ ha & Native vegetation $\geq1000$ ha + restricted use = no & 0.0164 & 0.8087 & 0.0203 & 37.65 & -- \\\\
+SP-specific & Native vegetation $4$--$15$ ha & Legal reserve $4$--$15$ ha & 0.0836 & 0.6023 & 0.1388 & 5.00 & 6.37 \\\\
+SP-specific & Native vegetation $4$--$15$ ha + restricted use = no & Legal reserve $4$--$15$ ha & 0.0832 & 0.6022 & 0.1381 & 5.00 & 6.37 \\\\
+SP-specific & Legal reserve $<4$ ha + 1--4 fiscal modules & Consolidated area $15$--$100$ ha & 0.0152 & 0.7197 & 0.0211 & 1.15 & 4.39 \\\\
+SP-specific & 1--4 fiscal modules + native vegetation = yes & Consolidated area $15$--$100$ ha & 0.1379 & 0.6097 & 0.2262 & 1.13 & 3.57 \\\\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+Global confidence and coverage are shown for each rule; municipal lift is reported separately for São Félix do Xingu (PA) and Presidente Prudente (SP). A dash indicates that the rule did not reach the audit threshold in that municipality.
+
+The table is descriptive. The PA-specific rules are identified because the threshold was reached in São Félix do Xingu and not in Presidente Prudente. This does not mean that the corresponding phenomenon is absent from São Paulo; it means that the rule did not reach the selected threshold in that municipal sample. Likewise, a high lift can occur for relatively uncommon antecedents, so lift must be read together with support and coverage.
+
+\section{Discussion}
+
+The results show that a public CAR dataset can be transformed into a transaction representation suitable for exploratory association mining. The comparison between Apriori and Eclat was internally consistent because both algorithms returned the same frequent itemsets. The different execution times are specific to this implementation, hardware, and transaction representation and should not be generalized.
+
+The strongest stable patterns involve small property-area and consolidated-area bands, together with the absence or presence of thematic records. These patterns should not be interpreted as legal or environmental diagnoses. Part of the association may reflect how areas are represented and aggregated in the public files. The audit therefore removed rules that directly linked the presence of a layer to its own area band.
+
+The municipal contrast is also affected by sample size and coverage. São Félix do Xingu has substantially more properties and a different distribution of thematic records. A municipality-specific rule may represent a real difference in the public registry, a difference in the territorial context, a difference in data coverage, or a combination of these factors. The present study does not identify which explanation is causal.
+
+\section{Conclusion}
+
+This paper presented a reproducible exploratory workflow for association rule mining in open CAR data. The workflow integrated 11,340 rural-property records from São Félix do Xingu and Presidente Prudente, generated transactions from public attributes and thematic layers, and compared Apriori and Eclat under the same parameters. The algorithms agreed on the frequent itemsets, while the municipal audit separated stable and municipality-specific rules.
+
+The findings are analytical indications of co-occurrence in public registration data. They are not automatic diagnoses of irregularity, fraud, ownership, environmental deficit, or legal conflict. The next stage is to review the selected rules with domain expertise, document the exact public files and access date in the final submission, and prepare the article's figures and presentation from the auditable outputs.
+
+\section{Limitations}
+
+This study has five main limitations. First, the analysis uses public CAR declarations and not a legal land registry or a field-validated environmental survey. Second, absence of a thematic record is treated as absence from the downloaded layer, not as proof that the feature does not exist. Third, the municipalities have very different sample sizes and coverage profiles. Fourth, some quantitative bands are derived from the downloaded area fields, so rules involving multiple area bands require cautious interpretation. Fifth, the results are limited to the public CAR extracts and their documented fields, versions, and access date.
+
+\section*{Acknowledgments}
+
+The author acknowledges the availability of the public CAR data portal. The empirical analysis reported in this paper used only publicly downloadable files.
+
+\bibliography{references_car}
+\bibliographystyle{acl_natbib}
+
+\end{document}
