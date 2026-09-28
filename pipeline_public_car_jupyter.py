@@ -1,8 +1,8 @@
 """Pipeline simples e reproduzível para mineração exploratória em dados públicos do CAR.
 
 Uso no Jupyter:
-    1. ajuste DATA_DIR;
-    2. execute o arquivo ou copie as células para o notebook;
+    1. abra o notebook exec_pipeline_public_car.ipynb;
+    2. execute a célula que importa este módulo;
     3. chame run_pipeline().
 
 O script não acessa Trino, Iceberg, GOLD, SNCR, SIGEF ou bases restritas.
@@ -212,5 +212,5 @@ def run_pipeline(data_dir=None, output_dir=None):
     return summary, properties, itemsets, eclat_itemsets, rules
 
 
-# No Jupyter, depois de ajustar DATA_DIR:
+# No Jupyter:
 # resultado = run_pipeline()
