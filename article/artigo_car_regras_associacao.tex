@@ -119,6 +119,13 @@ The integrated layers were: property area, consolidated area, permanent preserva
 \label{fig:municipal-satellite-context}
 \end{figure*}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{fig_cadastral_context_closeups.png}
+\caption{Close-up views of public CAR property perimeters in the two study municipalities. The orange polygons are public CAR declarations returned by the public CAR WFS within the map windows; the red marker is a municipal reference point. The panels provide spatial context for the tabular analysis and do not establish ownership, legal boundaries, environmental compliance, or irregularity.}
+\label{fig:cadastral-context-closeups}
+\end{figure*}
+
 \subsection{Transaction construction}
 
 Each property was represented by one transaction. The transaction included categorical items for state, municipality, property type, CAR status, area bands, and fiscal-module bands. For each thematic layer, the transaction included a presence item when at least one record with the property identifier was found. When an area attribute was available, the aggregated area was converted into the following bands: less than 4 ha; 4--15 ha; 15--100 ha; 100--1,000 ha; and 1,000 ha or more.
@@ -129,7 +136,7 @@ For example, one property can be represented by a transaction containing items s
 
 \subsection{Reproducibility and implementation}
 
-The canonical public-data execution was performed by the Jupyter notebook \texttt{artigo\_car\_publico\_execucao.ipynb}, which invokes the Python pipeline \texttt{pipeline\_dados\_abertos\_car.py} and the audit script \texttt{auditar\_regras\_car\_aberto.py}. Tabular preparation, transaction construction, Apriori, Eclat, and the interpretive audit were executed over the same public CSV population. The execution environment, parameter values, public-file manifest, source code, generated rule tables, and JSON summaries are versioned with the study materials. The public inputs are the municipal CSV extracts downloaded from the official CAR portal on 21 September 2026. The source code and result files are available at \url{https://github.com/cloudDataArch/car-association-mining-public-car}. The principal execution parameters were minimum support 0.01, minimum confidence 0.60, and maximum itemset length 3. This makes it possible to rerun the study after checking file versions, encoding, column names, and the download date. The reported counts in this paper are taken from the public execution output and its audit summary, rather than from a restricted database.
+The canonical public-data execution was performed by the Jupyter notebook \texttt{artigo\_car\_publico\_execucao.ipynb}, which invokes the Python pipeline \texttt{pipeline\_dados\_abertos\_car.py} and the audit script \texttt{auditar\_regras\_car\_aberto.py}. Tabular preparation, transaction construction, Apriori, Eclat, and the interpretive audit were executed over the same public CSV population. The execution environment, parameter values, public-file manifest, source code, generated rule tables, and JSON summaries are versioned with the study materials. The public inputs are the municipal CSV extracts downloaded from the official CAR portal on 21 September 2026. The source code and result files are available at \url{https://github.com/cloudDataArch/car-association-mining-public-car}. The principal execution parameters were minimum support 0.01, minimum confidence 0.60, and maximum itemset length 3. This makes it possible to rerun the study after checking file versions, encoding, column names, and the download date. The reported counts in this paper are taken from the public execution output and its audit summary.
 
 \subsection{Interpretive boundary of the rules}
 

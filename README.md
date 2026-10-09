@@ -15,7 +15,8 @@ The study uses public municipal extracts from the official [Consulta Pública do
 - `manifesto_fontes_publicas.csv`: source files, SHA-256 checksums, row counts, and distinct identifiers;
 - `results/`: canonical public execution outputs used in the paper;
 - `analysis/`: sensitivity and stability outputs;
-- `article/`: article source and the contextual municipal figure.
+- `create_public_car_maps.py`: public CAR WFS and Esri imagery map-generation script;
+- `article/`: article source, municipal context figures, close-up cadastral-context figure, and map metadata.
 
 ## Canonical execution
 
@@ -24,9 +25,10 @@ The scripts use Python's standard library only. From the repository root:
 ```text
 python pipeline_dados_abertos_car.py data/public_car results_reproduced --min-support 0.01 --min-confidence 0.60 --max-len 3
 python auditar_regras_car_aberto.py results_reproduced
+python create_public_car_maps.py
 ```
 
-The first command creates the analytical dataset, transaction list, frequent itemsets, and raw rules. The second command applies the interpretive audit and writes the comparison and candidate-rule files.
+The first command creates the analytical dataset, transaction list, frequent itemsets, and raw rules. The second command applies the interpretive audit and writes the comparison and candidate-rule files. The third command generates close-up contextual maps from the public CAR WFS and Esri World Imagery. The orange polygons are public CAR declarations returned within the selected map windows; the maps are contextual visualizations and are not legal evidence of ownership, compliance, or irregularity.
 
 ## Sensitivity and stability checks
 
