@@ -1,3 +1,2 @@
-pandas
-numpy
-mlxtend
+# The canonical scripts use Python's standard library only.
+# Python 3.10 or newer is recommended.

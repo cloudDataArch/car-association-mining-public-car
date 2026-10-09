@@ -1,0 +1,4 @@
+﻿min_support;min_confidence;max_len;total_transactions;min_count;frequent_itemsets;raw_rules;apriori_eclat_agree;output_directory
+0.005;0.6;3;11340;57;14113;20032;True;analysis\sensitivity_public_car\support_0.005
+0.01;0.6;3;11340;114;11574;17997;True;analysis\sensitivity_public_car\support_0.010
+0.02;0.6;3;11340;227;8725;14931;True;analysis\sensitivity_public_car\support_0.020
